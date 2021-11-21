@@ -8,4 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(unicode-test
 	src/main.cpp)
 
-target_compile_options(unicode-test PRIVATE -Wall -Wextra -Wpedantic)
+if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
+	target_compile_options(unicode-test PRIVATE /W4)
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	target_compile_options(unicode-test PRIVATE -Wall -Wextra -Wpedantic)
+endif()
