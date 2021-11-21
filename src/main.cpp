@@ -7,7 +7,7 @@ namespace dgt {
 #ifdef _WIN32
 		fflush(stdout);
 		_setmode(_fileno(stdout), _O_U16TEXT);
-		std::wcout << L"│" << std::endl;
+		std::wcout << L'\x2502' << "\n";
 		fflush(stdout);
 		_setmode(_fileno(stdout), _O_TEXT);
 #endif
