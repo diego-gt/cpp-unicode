@@ -14,6 +14,7 @@ namespace dgt {
 
 #ifdef __linux__
 		std::cout << "│\n";
+		std::cout << "\u2502" << "\n";
 #endif
 	}
 }
